@@ -1,0 +1,8 @@
+.container {
+    max-width: $container-max-width;
+    @include container;
+}
+.container-fluid {
+    width: map-get($values, 100);
+    @include container;
+}

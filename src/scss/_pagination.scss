@@ -1,0 +1,22 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    > .page-item {
+        margin: 0 $size-base * .1;
+        > .page-link {
+            padding: $size-base * .5 $size-base;
+            color: var(--darkcyan);
+            border-radius: $size-base * .3;
+            &:hover {
+                background-color: var(--darkcyan);
+                color: var(--white);
+            }
+        }
+        &.active {
+            > .page-link {
+                background-color: var(--darkcyan);
+                color: var(--white);
+            }
+        }
+    }    
+}

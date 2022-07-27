@@ -1,0 +1,7 @@
+@each $name, $val in $headings-font-sizes {
+	h#{$name}, .h#{$name} {
+		font-size: $val;
+		font-weight: $font-weight-base;
+        line-height: $line-height-base;
+	}
+}

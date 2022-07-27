@@ -1,0 +1,30 @@
+// font awesome
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts'; 
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+// 
+@import 'animate.css';
+// variable
+@import 'function';
+@import 'variable';
+@import 'root';
+// muixin
+@import 'mixin/containers';
+@import 'mixin/grid';
+@import 'mixin/spacie';
+@import 'mixin/breakpoints';
+@import 'mixin/backgroundImage';
+// utilities
+@import 'reboot';
+@import 'containers';
+@import 'grid';
+@import 'spacie';
+@import 'headings';
+@import 'button';
+@import 'colors';
+@import 'card';
+@import 'pagination';
+// main
+@import 'main';

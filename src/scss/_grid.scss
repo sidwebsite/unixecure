@@ -1,0 +1,49 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -$grid-gutter-width;
+    margin-right: -$grid-gutter-width;
+}
+// grid
+@each $key, $value in $grid-breakpoints {
+    @for $var from 1 through $grid-columns {
+    @if not $value {
+        .col-#{$var} {
+            @include col;
+        }
+        } @else {
+            .col-#{$key}-#{$var} {
+                @include col;
+            }
+        }
+    }
+}
+// 
+@each $key, $value in $grid-breakpoints {
+    @if not $value {
+        @for $var from 1 to $grid-columns {
+            .col-#{$var} {
+                max-width: calc(map-get($values, 100) * ($var / $grid-columns));
+                flex: 0 0 calc(map-get($values, 100) * ($var / $grid-columns));
+            }
+        }
+    } @else {
+        @media screen and (min-width: $value) {
+            @for $var from 1 to $grid-columns {
+                .col-#{$key}-#{$var} {
+                    max-width: calc(map-get($values, 100) * ($var / $grid-columns));
+                    flex: 0 0 calc(map-get($values, 100) * ($var / $grid-columns));
+                }
+            }
+        }
+    }
+}
+// no-gutters
+.no-gutters {
+	margin-left: map-get($values, 0);
+	margin-right: map-get($values, 0);	
+	> [class*='col-'] {
+		padding-left: map-get($values, 0);
+		padding-right: map-get($values, 0);
+	}
+}

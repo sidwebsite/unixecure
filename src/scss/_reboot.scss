@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap');
+*, *:before, *:after {
+	margin: map-get($values, 0);
+	padding: map-get($values, 0);
+	box-sizing: border-box;
+}
+body {
+	margin: map-get($values, 0);
+	padding: map-get($values, 0);
+	font-family: $font-family;
+	background-color: var(--white);
+	color: var(--secondary);
+	height: 100vh;
+}
+a {
+	color: var(--primary);
+	text-decoration: none;
+	transition: all 0.3s ease;
+}
+ul, li {
+	list-style: none;
+}
+p {
+	line-height: 1.8;
+	font-size: $font-size-base * 1.25;
+	text-align: justify;
+}
+.section {
+	padding-top: $size-base * 5;
+	padding-bottom: $size-base * 5;
+}
+.content {
+    padding-top: $size-base * 10;
+    padding-bottom: $size-base * 5;
+}
+.article {
+	background-color: var(--white);
+	box-shadow: 3px 3px 18px rgba($darkcyan, 0.3);
+	border-radius: $size-base * 1.8;
+	padding: $size-base * 2;
+}
+.clearfix {
+	&::after {
+		display: block;
+		clear: both;
+		content: "";
+	}
+}

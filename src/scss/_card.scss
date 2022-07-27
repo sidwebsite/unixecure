@@ -1,0 +1,35 @@
+.card {
+    overflow: hidden;
+    background-color: var(--white);
+    border-radius: $size-base * 1.8;
+    box-shadow: 3px 3px 18px rgba($darkcyan, 0.3);
+    .card-img {
+        overflow: hidden;
+        img {
+            width: 100%;
+            object-fit: cover;
+            height: 140px;
+            transform: scale(1);
+            transition: all .3s ease;
+        }
+    }
+    .card-body {
+        padding: $size-base * 2;
+        h5 {
+            line-height: 1.8;
+            color: var(--secondary);
+        }
+    }
+    a {
+        &:hover {
+            .card-img {
+                img {
+                    transform: scale(1.2);
+                }
+            }
+            h5 {
+                color: var(--darkcyan);
+            }
+        }        
+    }
+}

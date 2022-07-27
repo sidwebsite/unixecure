@@ -1,0 +1,104 @@
+// colors
+$blue: #003AA5;
+$orange: #FABE1B;
+$cyan: #52B8C1;
+$lightcyan: #EDFDFD;
+$darkcyan: #2980AD;
+$gray: #707070;
+$white: #fff;
+$black: #3B3B3B;
+$light-gray: #CBCBCB;
+// 
+$primary:       $blue;
+$secondary:     $gray;
+$warning:       $orange;
+// size
+$size-base: 1rem;
+// 
+$grid-columns: 12;
+$grid-gutter-width: 1.5rem;
+$container-max-width: 1140px;
+// colors 
+$theme-colors: (
+	"primary":       $blue,
+	"secondary":     $gray,
+	"warning":       $orange,
+	"lightcyan":     $lightcyan,
+	"darkcyan":      $darkcyan,
+	"cyan":          $cyan,
+	"light":         $white,
+	"dark":          $black,
+	"white":         $white,
+	"light-gray": $light-gray
+);
+// 斷點
+$grid-breakpoints: (
+	'': false,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px
+);
+$spacies-breakpoints: (
+	'': false,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px
+);
+$spacies: (
+	0: 0,
+	1: $size-base * .25,
+	2: $size-base * .5,
+	3: $size-base,
+	4: $size-base * 1.5,
+	5: $size-base * 3,
+	auto: auto,
+);
+$property: 'm', 'p';
+$sides: '', 't', 'b', 'l', 'r', 'x', 'y';
+
+// font
+$font-weight-lighter:         300;
+$font-weight-light:           400;
+$font-weight-normal:          500;
+$font-weight-bold:            700;
+$font-weight-bolder:          900;
+$font-weights: (
+	"lighter":  $font-weight-lighter,
+	"light":    $font-weight-light,
+	"normal":   $font-weight-normal,
+	"bold":     $font-weight-bold,
+	"bolder":   $font-weight-bolder
+);
+
+$font-family: 'Noto Sans TC', sans-serif;
+$font-size-base: 1rem;
+$font-weight-base: 600;
+$line-height-base: 1.2;
+
+// 
+$headings-font-sizes: (
+    1: $font-size-base * 2.5,
+    2: $font-size-base * 2,
+    3: $font-size-base * 1.75,
+    4: $font-size-base * 1.5,
+    5: $font-size-base * 1.25, 
+    6: $font-size-base
+);
+// 
+$values: (
+	0: 0,
+	25: 25%,
+	50: 50%,
+	75: 75%,
+	100: 100%,
+	auto: auto
+);
+// border radius
+$border-radius-base: 0.3rem;
+// 
+$box-shadow-base: 0 0 3rem rgba($darkcyan, 0.3); 
+$dropdown-box-shadow: 0 0 1rem rgba($darkcyan, 0.3); 
