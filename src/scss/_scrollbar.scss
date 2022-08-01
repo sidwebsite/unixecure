@@ -1,0 +1,10 @@
+::-webkit-scrollbar {
+    height: $size-base * 0.3;
+    width: $size-base * 0.5;
+}
+::-webkit-scrollbar-track {
+    background-color: var(--light-gray);
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--darkcyan);
+}

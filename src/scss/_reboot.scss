@@ -17,8 +17,9 @@ a {
 	text-decoration: none;
 	transition: all 0.3s ease;
 }
-ul, li {
-	list-style: none;
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
 }
 p {
 	line-height: 1.8;
@@ -34,10 +35,16 @@ p {
     padding-bottom: $size-base * 5;
 }
 .article {
-	background-color: var(--white);
-	box-shadow: 3px 3px 18px rgba($darkcyan, 0.3);
-	border-radius: $size-base * 1.8;
-	padding: $size-base * 2;
+	color: var(--dark);
+	p {
+		padding-bottom: $size-base * 1.5;
+	}	
+	ul, ol {
+		font-size: $size-base * 1.25;
+		line-height: 1.8;
+		padding-bottom: $size-base * 1.5;
+		padding-left: $size-base * 1.5;
+	}
 }
 .clearfix {
 	&::after {
@@ -45,4 +52,13 @@ p {
 		clear: both;
 		content: "";
 	}
+}
+.float-none {
+	float: none !important;
+}
+.w-100 {
+	width: 100% !important;
+}
+.border-0 {
+	border: none !important;
 }

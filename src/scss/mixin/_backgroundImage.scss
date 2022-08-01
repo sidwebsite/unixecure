@@ -2,4 +2,15 @@
     background-image: url(../images/#{$image});
     background-repeat: no-repeat;
     background-size: $size;
+};
+@mixin  background-page($image) {
+    @include background-image($image, auto);
+    position: relative;
+    &::before {
+        content: "";
+        background: linear-gradient( rgba(199,237,239, 0.3) 13%, var(--lightcyan) 30%);
+        width: map-get($values, 100);
+        height: map-get($values, 100);
+        position: absolute;
+    }
 }

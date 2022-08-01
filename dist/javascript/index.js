@@ -561,6 +561,30 @@ function headerScroll() {
     }
 }
 
+/***/ }),
+
+/***/ "./src/javascript/module/truncation.js":
+/*!*********************************************!*\
+  !*** ./src/javascript/module/truncation.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "truncation": () => (/* binding */ truncation)
+/* harmony export */ });
+function truncation(el, len) {
+    const ellipsis = document.querySelectorAll(el);
+    ellipsis.forEach(item => {
+        if(item.textContent.length > len) {
+            const textLen = item.textContent.substring(0,len) + '...'
+            item.textContent = textLen
+        };
+    });
+
+}
+
 /***/ })
 
 /******/ 	});
@@ -642,18 +666,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _module_header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./module/header */ "./src/javascript/module/header.js");
 /* harmony import */ var wow_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! wow.js */ "./node_modules/wow.js/dist/wow.js");
 /* harmony import */ var wow_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(wow_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _module_truncation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./module/truncation */ "./src/javascript/module/truncation.js");
 // header Scroll
 
 window.addEventListener('scroll', _module_header__WEBPACK_IMPORTED_MODULE_0__["default"]);
 // wow.js
  
 new (wow_js__WEBPACK_IMPORTED_MODULE_1___default())().init();
-
 // Counter
 let started = false;
 function countersFun() {
     const counters = document.querySelectorAll('.animate-number');
-    let interval = 3000;
+    let interval = 2000;
     counters.forEach((valueDisplay) => {
         let startValue = 0;
         let endValue = parseInt(valueDisplay.getAttribute("data-target"));
@@ -662,7 +686,7 @@ function countersFun() {
             startValue += 1;
             valueDisplay.textContent = startValue;
             if (startValue == endValue) {
-            clearInterval(counter);
+                clearInterval(counter);
             }
         }, duration);
     });
@@ -675,11 +699,30 @@ window.addEventListener('scroll', () => {
         }
         started = true;
     }
-})
+});
+// text truncation
 
+(0,_module_truncation__WEBPACK_IMPORTED_MODULE_2__.truncation)('.card-body h5', 25);
+// video modal
+const bannerVideoBtn = document.querySelector('.banner-video-btn');
+const videoModal = document.querySelector('.video-modal');
+const videoModalCloseBtn = document.querySelector('.video-modal-close-btn');
+const video = document.querySelector('#video');
+// const videoSrc = video.src;
+bannerVideoBtn.addEventListener('click', (e) => {
+    video.src += "?autoplay=1&amp;modestbranding=1&amp;showinfo=0";
+    // e.preventDefault();
+    document.body.classList.add('modal-open');
+    videoModal.classList.add('show');
+});
+videoModalCloseBtn.addEventListener('click', () => {
+    video.src = video.src.replace(/\?autoplay=1&amp;modestbranding=1&amp;showinfo=0/g, '');
+    document.body.classList.remove('modal-open');
+    videoModal.classList.remove('show')
+});
 
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=index.js.map?d70a917b
+//# sourceMappingURL=index.js.map?b2714e4f

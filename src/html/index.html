@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant-TW">
     <head>
-        <title>unixecure</title>        
+        <title>unixecure</title>
     </head>
     <body>
         <main class="main index">
@@ -28,9 +28,9 @@
                                     <i class="fa-solid fa-globe"></i>
                                     <span>繁體中文</span>
                                 </a>
-                                <ul class="dropdown-menu dropdown-hide">
+                                <ul class="dropdown-menu dropdown-hide list-unstyled">
                                     <li>
-                                        <input type="checkbox" name="language" id="zh-TW">
+                                        <input type="checkbox" name="language" id="zh-TW" checked>
                                         <label for="zh-TW">繁體中文</label>
                                     </li>
                                 </ul>
@@ -173,12 +173,33 @@
                                 <h2 class="text-primary mb-3">可視化資安戰情看板<br />全天候監控所有安全隱患</h2>
                                 <p>資安整合戰情看板(MOC Portal)可整合多種資訊，以可視化高互動之方式，呈現流量、日誌、防毒、防駭、系統資源(處理器、記憶體、磁碟容量等)、系統組態(GCB、安全性更新、安裝軟體…)等相關資安監控資訊。提供資安警訊、事件等即時圖表，協助管理人員可迅速作出處置，並監視事件處理狀態。</p>
                             </article>
+                            <!--  -->
+                            <div class="dots-container">
+                                <div class="dots">
+                                    <div class="pr-4 mb-3 dots-span">
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--  -->
                         </div>
                         <div class="col-lg-6">
                             <div class="dashboard-images-container wow slideInRight">
                                 <img src="../images/screen-line.png" alt="">
-                                <div class="dashboard-images">                                
-                                    <img src="../images/dashboard-image-01.png" alt="">
+                                <div class="dashboard-images">
+                                    <div class="dashboard-wrapper">
+                                        <div class="slide">
+                                            <img src="../images/dashboard-image-01.png" alt="">
+                                        </div>
+                                        <div class="slide">
+                                            <img src="../images/dashboard-image-02.png" alt="">
+                                        </div>
+                                        <div class="slide">
+                                            <img src="../images/dashboard-image-03.png" alt="">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -215,28 +236,14 @@
                     </div>
                     <div class="row wow fadeIn">
                         <!-- news starts -->
-                        <div class="col-md-4">
+                        <div class="col-md-4">                            
                             <div class="card mb-3 mb-md-0">
-                                <a href="#">
+                                <a href="news-content-01.html">
                                     <div class="card-img">
                                         <img src="../images/index-news-01.jpg" alt="">
                                     </div>
                                     <div class="card-body">                                        
-                                        <h5>建構全方位的社交工程演練與資安教育訓練,有效平衡IT單</h5>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- news ends -->
-                        <!-- news starts -->
-                        <div class="col-md-4">                            
-                            <div class="card mb-3 mb-md-0">
-                                <a href="#">
-                                    <div class="card-img">
-                                        <img src="../images/index-news-02.jpg" alt="">
-                                    </div>
-                                    <div class="card-body">                                        
-                                        <h5>建構全方位的社交工程演練與資安教育訓練,有效平衡IT單</h5>
+                                        <h5>智慧資安科技已通過技服中心聯防監控廠商的連通測試，包含G-SOC 1.0、G-SOC2.0、EDR 連線測試作業！</h5>
                                     </div>
                                 </a>
                             </div>
@@ -245,12 +252,12 @@
                         <!-- news starts -->
                         <div class="col-md-4">
                             <div class="card mb-3 mb-md-0">
-                                <a href="#">
+                                <a href="news-content-02.html">
                                     <div class="card-img">
-                                        <img src="../images/index-news-03.jpg" alt="">
+                                        <img src="../images/index-news-02.jpg" alt="">
                                     </div>
-                                    <div class="card-body">                                        
-                                        <h5>建構全方位的社交工程演練與資安教育訓練,有效平衡IT單</h5>
+                                    <div class="card-body">
+                                        <h5>MOC資安監控維運中心已被國際認證具有軟體、數據及演算技術能力，已取得ISO20000、ISO27001與ISO27701的國際認證</h5>
                                     </div>
                                 </a>
                             </div>
@@ -267,7 +274,7 @@
                 </div>
                 <div class="footer-content">
                     <article class="mb-3 mb-xl-0">
-                        <ul>
+                        <ul class="list-unstyled">
                             <li>諮詢與服務信箱: <a href="mailto:user@unixecure.com.tw" class="link-white" target="_blank">user@unixecure.com.tw</a></li>
                             <li>114 台北市內湖區瑞光路318號　02-7720-1888 <a href="https://goo.gl/maps/KhiDTa6eeSTd41ai8" class="link-warning" target="_blank">[ 位置地圖 ]</a></li>
                             <li>407 臺中市西屯區台灣大道3段660號8樓之1　02-2368-6171 <a href="https://goo.gl/maps/1HQmRuD63m8uCJz9A" class="link-warning" target="_blank">[ 位置地圖 ]</a></li>
@@ -279,15 +286,31 @@
                             <a href="https://www.youtube.com/channel/UC6VCxEoyhbVVuzyUY3hQmEA/featured" target="_blank"><i class="fa-brands fa-youtube"></i></a>
                             <!-- <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></i></a> -->
                         </div>
-                        <a href="#" class="link-warning">[ 著作權及隱私權聲明 ]</a>
+                        <a href="copyright-privacy.html" class="link-warning">[ 著作權及隱私權聲明 ]</a>
                     </div>
                 </div>
             </footer>
             <!-- footer ends -->
         </main>
         <!-- go top -->
-        <div class="togot">
-            
+        <button type="button" class="btn gotop">
+            <i class="fa-solid fa-caret-up"></i>
+        </button>
+        <!-- video modal starts -->
+        <div class="video-modal">
+            <div class="video-modal-dialog">
+                <div class="video-modal-body">
+                    <div class="video-modal-header">
+                        <button type="button" class="btn video-modal-close-btn"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                    <div class="video-modal-content">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe id="video" src="https://www.youtube.com/embed/jctp9xyl3PU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>            
         </div>
+        <!-- video modal ends -->
     </body>
 </html>

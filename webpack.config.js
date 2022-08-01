@@ -32,7 +32,9 @@ const metaDate = {
 module.exports = {
     entry: {
         main: './src/javascript/main.js',
-        index: './src/javascript/index.js'
+        index: './src/javascript/index.js',
+        news:'./src/javascript/news.js',
+        video: './src/javascript/video.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -93,17 +95,17 @@ module.exports = {
             template: './src/html/index.html',
             filename: 'index.html',
             meta: metaDate,
-            favicon: favicon,
             chunks: ['main', 'index'],
-            minify: false
+            favicon: favicon,
+            minify: false 
         }),
         // about
         new HtmlWebpackPlugin({
             template: './src/html/about.html',
             filename: 'about.html',
             meta: metaDate,
-            favicon: favicon,
             chunks: ['main'],
+            favicon: favicon,
             minify: false
         }),
         // serve
@@ -111,8 +113,8 @@ module.exports = {
             template: './src/html/serve.html',
             filename: 'serve.html',
             meta: metaDate,
-            favicon: favicon,
             chunks: ['main'],
+            favicon: favicon,
             minify: false
         }),
         // news
@@ -120,17 +122,25 @@ module.exports = {
             template: './src/html/news.html',
             filename: 'news.html',
             meta: metaDate,
+            chunks: ['main', 'news'],
             favicon: favicon,
-            chunks: ['main'],
             minify: false
         }),
         // news content
         new HtmlWebpackPlugin({
-            template: './src/html/news-content.html',
-            filename: 'news-content.html',
+            template: './src/html/news-content-01.html',
+            filename: 'news-content-01.html',
             meta: metaDate,
-            favicon: favicon,
             chunks: ['main'],
+            favicon: favicon,
+            minify: false
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/html/news-content-02.html',
+            filename: 'news-content-02.html',
+            meta: metaDate,
+            chunks: ['main'],
+            favicon: favicon,
             minify: false
         }),
         // video
@@ -138,8 +148,17 @@ module.exports = {
             template: './src/html/video.html',
             filename: 'video.html',
             meta: metaDate,
+            chunks: ['main', 'video'],
             favicon: favicon,
+            minify: false
+        }),
+        // Copyright and Privacy Statement
+        new HtmlWebpackPlugin({
+            template: './src/html/copyright-privacy.html',
+            filename: 'copyright-privacy.html',
+            meta: metaDate,
             chunks: ['main'],
+            favicon: favicon,
             minify: false
         }),
     ],

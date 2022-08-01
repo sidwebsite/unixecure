@@ -14,6 +14,42 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/javascript/module/gotop.js":
+/*!****************************************!*\
+  !*** ./src/javascript/module/gotop.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "smoothScrollBackToTop": () => (/* binding */ smoothScrollBackToTop)
+/* harmony export */ });
+function smoothScrollBackToTop() {
+    const targetPosition = 0;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    const duration = 750;
+    let start = null;
+    
+    window.requestAnimationFrame(step);
+
+    function step(timestamp) {
+        if (!start) start = timestamp;
+        const progress = timestamp - start;
+        window.scrollTo(0, easeInOutCubic(progress, startPosition, distance, duration));
+        if (progress < duration) window.requestAnimationFrame(step);
+    };
+};
+
+function easeInOutCubic(t, b, c, d) {
+    t /= d/2;
+    if (t < 1) return c/2*t*t*t + b;
+    t -= 2;
+    return c/2*(t*t*t + 2) + b;
+};
+
+/***/ }),
+
 /***/ "./src/javascript/module/navbar.js":
 /*!*****************************************!*\
   !*** ./src/javascript/module/navbar.js ***!
@@ -112,19 +148,53 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/style.scss */ "./src/scss/style.scss");
 /* harmony import */ var _module_navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./module/navbar */ "./src/javascript/module/navbar.js");
+/* harmony import */ var _javascript_module_gotop__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../javascript/module/gotop */ "./src/javascript/module/gotop.js");
 // scss
 
-// ES mob
+// ES 
+// dropdown javascript
 
-// 
 window.addEventListener('click', _module_navbar__WEBPACK_IMPORTED_MODULE_1__.dropdown);
-// navbar
+// navbar javascript 
 const barBtn = document.querySelector('.bar-btn');
 barBtn.addEventListener('click', _module_navbar__WEBPACK_IMPORTED_MODULE_1__.navbarShow);
 const navbarCloseBtn = document.querySelector('.navbar-close-btn');
 navbarCloseBtn.addEventListener('click', _module_navbar__WEBPACK_IMPORTED_MODULE_1__.navbarHide);
+// go top javascript 
+
+const backToTopButton = document.querySelector('.gotop');
+function scrollFunction(){
+    if(window.pageYOffset > 300) {
+        backToTopButton.classList.add('show');
+    } else {
+        backToTopButton.classList.remove('show');
+    };
+};
+window.addEventListener('scroll', scrollFunction);
+backToTopButton.addEventListener('click', _javascript_module_gotop__WEBPACK_IMPORTED_MODULE_2__.smoothScrollBackToTop);
+// dashboard images slideshow
+let slideIndex = 0;
+const dots = document.querySelectorAll('.dot');
+const slides = document.querySelectorAll('.slide');
+function showSlides() {	
+	slides.forEach((slide, i) => {
+		slide.style.display = "none";
+	})
+	slideIndex++;
+	if (slideIndex > slides.length) {slideIndex = 1}   
+	dots.forEach((dot, i) => {
+		dot.className = dot.className.replace(" active", "");
+	})
+	slides[slideIndex-1].style.display = "block";  
+	dots[slideIndex-1].className += " active";
+	setTimeout(showSlides, 5000); 
+};
+showSlides();
+
+
+
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=main.js.map?d70a917b
+//# sourceMappingURL=main.js.map?b2714e4f
