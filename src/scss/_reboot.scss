@@ -56,9 +56,6 @@ p {
 .float-none {
 	float: none !important;
 }
-.w-100 {
-	width: 100% !important;
-}
-.border-0 {
-	border: none !important;
+.hr {
+	border-top: 1px solid var(--light-gray);
 }

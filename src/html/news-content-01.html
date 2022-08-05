@@ -20,15 +20,21 @@
                         <button type="button" class="btn navbar-close-btn"><i class="fa-solid fa-xmark"></i></button>
                         <ul class="navbar-list">
                             <li><a href="about.html">關於我們</a></li>
-                            <li><a href="serve.html">服務項目</a></li>
-                            <li class="active"><a href="news.html">最新消息</a></li>
-                            <li><a href="video.html">影音專區</a></li>
                             <li>
-                                <a href="javascript:;" class="dropdown">
+                                <a href="javascript:;" data-toggle="sub-menu" class="dropdown">服務項目</a>
+                                <ul class="dropdown-menu list-unstyled">
+                                    <li><a href="serve-moc.html">MOC</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="news.html">最新消息</a></li>
+                            <li><a href="video.html">影音專區</a></li>
+                            <li><a href="contact.html">聯絡我們</a></li>
+                            <li>
+                                <a href="javascript:;" data-toggle="sub-menu" class="dropdown">
                                     <i class="fa-solid fa-globe"></i>
                                     <span>繁體中文</span>
                                 </a>
-                                <ul class="dropdown-menu dropdown-hide list-unstyled">
+                                <ul class="dropdown-menu list-unstyled">
                                     <li>
                                         <input type="checkbox" name="language" id="zh-TW" checked>
                                         <label for="zh-TW">繁體中文</label>
@@ -49,8 +55,8 @@
             <!-- content starts -->
             <section class="content">
                 <div class="container">
-                    <div class="row mb-5">
-                        <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 mb-3">
                             <h2 class="text-dark">智慧資安科技已通過技服中心聯防監控廠商的連通測試，包含G-SOC 1.0、G-SOC2.0、EDR 連線測試作業！</h2>
                         </div>
                     </div>
@@ -64,15 +70,15 @@
                                         <li>端點偵測及應變機制(EDR)：資安法修法後，要求資通安全威脅偵測管理要納入「端點偵測及應變機制」，政府機關導入「端點偵測及應變機制」，還需要能透過資通安全威脅偵測管理機制服務廠商進行通報。</li>
                                     </ol>
                                     <p>智慧資安已完成G-SOC 2.0的連通測試，代表委託給智慧資安進行資安監控服務的公務機關，能更全面、更即時的回傳監控情資到 G-SOC！</p>
-                                    <p>想了解更多詳細資訊歡迎與智慧資安聯繫，<a href="#" target="_blank" class="link-darkcyan">聯絡我們</a></p>
+                                    <p>想了解更多詳細資訊歡迎與智慧資安聯繫，<a href="contact.html" class="link-darkcyan">聯絡我們</a></p>
                                     <img src="../images/index-news-01.jpg" alt="">
                                 </article>
                                 <div class="content-article-bottom">
                                     <div class="share">
                                         <span>分享此頁：</span>
-                                        <a href="#"><i class="fa-brands fa-line"></i></a>
-                                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                        <a href="#"><i class="fa-solid fa-link"></i></a>
+                                        <button type="button" class="btn" data-sharer="line" data-url=""><i class="fa-brands fa-line"></i></button>
+                                        <button type="button" class="btn" data-sharer="facebook" data-url=""><i class="fa-brands fa-facebook-f"></i></button>
+                                        <!-- <button type="button" class="btn"><i class="fa-solid fa-link"></i></button> -->
                                     </div>
                                     <div class="date">2022 / 6 / 15</div>
                                     <div class="replay-list"><a href="news.html">返回列表 <i class="fa-solid fa-caret-right"></i></a></div>
@@ -113,4 +119,6 @@
             <i class="fa-solid fa-caret-up"></i>
         </button>
     </body>
+    <!--  -->
+    <script src="https://cdn.jsdelivr.net/npm/sharer.js@latest/sharer.min.js"></script>
 </html>

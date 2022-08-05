@@ -720,9 +720,26 @@ videoModalCloseBtn.addEventListener('click', () => {
     document.body.classList.remove('modal-open');
     videoModal.classList.remove('show')
 });
-
+// dashboard images slideshow
+let slideIndex = 0;
+const dots = document.querySelectorAll('.dot');
+const slides = document.querySelectorAll('.slide');
+function showSlides() {	
+	slides.forEach((slide, i) => {
+		slide.style.display = "none";
+	})
+	slideIndex++;
+	if (slideIndex > slides.length) {slideIndex = 1}   
+	dots.forEach((dot, i) => {
+		dot.className = dot.className.replace(" active", "");
+	})
+	slides[slideIndex-1].style.display = "block";  
+	dots[slideIndex-1].className += " active";
+	setTimeout(showSlides, 5000); 
+};
+showSlides();
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=index.js.map?b2714e4f
+//# sourceMappingURL=index.js.map?0f70d79a

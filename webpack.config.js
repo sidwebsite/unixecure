@@ -20,13 +20,13 @@ const metaDate = {
     description: meta.description,
     keywords: meta.keywords,
     author: meta.author,
-    // 'google-name': {'itemprop':'name', content:meta.title},
-    // 'google-image': {'itemprop':'image', content:meta.image},
-    // 'google-description': {'itemprop':'description', content:meta.description},
-    // 'facebook-title': {'property':'og:title',content: meta.title},
-    // 'facebook-url': {'property':'og:url',content: meta.url},
-    // 'facebook-image': {'property':'og:image',content: meta.image},
-    // 'facebook-description': {'property':'og:description',content: meta.description},
+    'google-name': {'itemprop':'name', content:meta.title},
+    'google-image': {'itemprop':'image', content:meta.image},
+    'google-description': {'itemprop':'description', content:meta.description},
+    'facebook-title': {'property':'og:title',content: meta.title},
+    'facebook-url': {'property':'og:url',content: meta.url},
+    'facebook-image': {'property':'og:image',content: meta.image},
+    'facebook-description': {'property':'og:description',content: meta.description},
 }
 
 module.exports = {
@@ -34,7 +34,8 @@ module.exports = {
         main: './src/javascript/main.js',
         index: './src/javascript/index.js',
         news:'./src/javascript/news.js',
-        video: './src/javascript/video.js'
+        video: './src/javascript/video.js',
+        share: './src/javascript/share.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -108,10 +109,19 @@ module.exports = {
             favicon: favicon,
             minify: false
         }),
+        // contact
+        new HtmlWebpackPlugin({
+            template: './src/html/contact.html',
+            filename: 'contact.html',
+            meta: metaDate,
+            chunks: ['main'],
+            favicon: favicon,
+            minify: false
+        }),
         // serve
         new HtmlWebpackPlugin({
-            template: './src/html/serve.html',
-            filename: 'serve.html',
+            template: './src/html/serve-moc.html',
+            filename: 'serve-moc.html',
             meta: metaDate,
             chunks: ['main'],
             favicon: favicon,
@@ -151,6 +161,22 @@ module.exports = {
             chunks: ['main', 'video'],
             favicon: favicon,
             minify: false
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/html/video-content-01.html',
+            filename: 'video-content-01.html',
+            meta: metaDate,
+            chunks: ['main'],
+            favicon: favicon,
+            minify: false
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/html/video-content-02.html',
+            filename: 'video-content-02.html',
+            meta: metaDate,
+            chunks: ['main'],
+            favicon: favicon,
+            minify: false 
         }),
         // Copyright and Privacy Statement
         new HtmlWebpackPlugin({

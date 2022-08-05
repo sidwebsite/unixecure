@@ -1,0 +1,8 @@
+@each $var, $value in $values {
+    .w-#{$var} {
+        width: $value !important;
+    }
+    .h-#{$var} {
+        height: $value !important;
+    }
+}

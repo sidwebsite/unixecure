@@ -1,0 +1,5 @@
+@each $var in $display {
+    .d-#{$var} {
+        display: $var !important;
+    }
+}

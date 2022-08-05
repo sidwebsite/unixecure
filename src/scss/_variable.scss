@@ -95,10 +95,19 @@ $values: (
 	50: 50%,
 	75: 75%,
 	100: 100%,
-	auto: auto
+	auto: auto,
+	100vh: 100vh,
+	100vw: 100vw
 );
 // border radius
 $border-radius-base: 0.3rem;
 // 
 $box-shadow-base: 0 0 3rem rgba($darkcyan, 0.3); 
 $dropdown-box-shadow: 0 0 1rem rgba($darkcyan, 0.3); 
+
+// align
+$align: left, center, right, justify;
+// arrow
+$arrow: top, bottom, left, right;
+// display
+$display: inline-block block grid flex none;

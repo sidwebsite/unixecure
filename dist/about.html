@@ -2,7 +2,7 @@
 <html lang="zh-Hant-TW">
     <head>
         <title>unixecure</title>
-    <meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="ree Web Tutorial"><meta name="keywords" content="HTML,CSS,JavaScript"><meta name="author" content="Mike"><link rel="icon" href="favicon.ico"><script defer src="./javascript/main.js?b2714e4f"></script><link href="css/style.css?b2714e4f" rel="stylesheet"></head>
+    <meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="ree Web Tutorial"><meta name="keywords" content="HTML,CSS,JavaScript"><meta name="author" content="Mike"><meta itemprop="name" content="unixecure"><meta itemprop="image" content=""><meta itemprop="description" content="ree Web Tutorial"><meta property="og:title" content="unixecure"><meta property="og:url" content=""><meta property="og:image" content=""><meta property="og:description" content="ree Web Tutorial"><link rel="icon" href="favicon.ico"><script defer src="./javascript/main.js?0f70d79a"></script><link href="css/style.css?0f70d79a" rel="stylesheet"></head>
     <body>
         <main class="main about main-page">
             <!-- header starts -->
@@ -19,16 +19,22 @@
                     <nav class="navbar">
                         <button type="button" class="btn navbar-close-btn"><i class="fa-solid fa-xmark"></i></button>
                         <ul class="navbar-list">
-                            <li class="active"><a href="about.html">關於我們</a></li>
-                            <li><a href="serve.html">服務項目</a></li>
+                            <li><a href="about.html">關於我們</a></li>                            
+                            <li>
+                                <a href="javascript:;" data-toggle="sub-menu" class="dropdown">服務項目</a>
+                                <ul class="dropdown-menu list-unstyled">
+                                    <li><a href="serve-moc.html">MOC</a></li>
+                                </ul>
+                            </li>
                             <li><a href="news.html">最新消息</a></li>
                             <li><a href="video.html">影音專區</a></li>
+                            <li><a href="contact.html">聯絡我們</a></li>
                             <li>
-                                <a href="javascript:;" class="dropdown">
+                                <a href="javascript:;" data-toggle="sub-menu" class="dropdown">
                                     <i class="fa-solid fa-globe"></i>
                                     <span>繁體中文</span>
                                 </a>
-                                <ul class="dropdown-menu dropdown-hide list-unstyled">
+                                <ul class="dropdown-menu list-unstyled">
                                     <li>
                                         <input type="checkbox" name="language" id="zh-TW" checked>
                                         <label for="zh-TW">繁體中文</label>
@@ -49,7 +55,7 @@
             <!-- content starts -->
             <section class="content">
                 <div class="container">
-                    <div class="row mb-5">
+                    <div class="row">
                         <div class="col-12">
                             <div class="content-title border-0">
                                 <h1 class="text-darkcyan mb-3">關於我們</h1>
@@ -59,8 +65,12 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="content-article">
-                                <img src="images/about-image.png" class="float-none w-100" alt="">
-                                <small>(左起)智慧資安科技吳建和總經理、精誠資訊詹伊正副總經理</small>
+                                <figure>
+                                    <img src="images/about-image.png" class="float-none w-100" alt="">
+                                    <figcaption>
+                                        <small>(左起)智慧資安科技吳建和總經理、精誠資訊詹伊正副總經理</small>
+                                    </figcaption>
+                                </figure>
                                 <article class="article mt-3">
                                     <p>智慧資安科技是由精誠集團的資深資安團隊組成，自2022年1月1日起成立，至今已擁有近百家的豐富建置經驗，且跨足各個產業領域。有鑒於全球企業急速數位轉型的需求，新科技演進也延伸更多未知潛藏的資安疑慮，再加之國際與政府法規對資安合規的重視，以及彌補機關/企業資安人才不足難以建構資安聯防機制，遂成立智慧資安科技，以豐富建置經驗為基礎，由專業資安團隊建立資訊資產防護機制的角度，讓政府機關、企業能以訂閱制方式，享有事前預防、事中偵測、事後應處等一站式資安服務，協助機關或企業全力防堵潛在威脅。</p>
                                     <p>未來期望藉由長期與國際資安大廠的結盟經驗，透過智慧資安科技連結精誠集團的系統整合服務能量，與臺灣新創資安團隊組成聯盟。除透過打造資安生態圈，為不同產業用戶提供專屬解決方案之外，也能以團隊方式進軍國際市場，讓臺灣的資安技術服務能量能在世界嶄露頭角。</p>
@@ -68,9 +78,9 @@
                                 <div class="content-article-bottom">
                                     <div class="share">
                                         <span>分享此頁：</span>
-                                        <a href="#"><i class="fa-brands fa-line"></i></a>
-                                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                        <a href="#"><i class="fa-solid fa-link"></i></a>
+                                        <button type="button" class="btn" data-sharer="line" data-url=""><i class="fa-brands fa-line"></i></button>
+                                        <button type="button" class="btn" data-sharer="facebook" data-url=""><i class="fa-brands fa-facebook-f"></i></button>
+                                        <!-- <button type="button" class="btn"><i class="fa-solid fa-link"></i></button> -->
                                     </div>
                                 </div>
                             </div>
@@ -108,5 +118,7 @@
         <button type="button" class="btn gotop">
             <i class="fa-solid fa-caret-up"></i>
         </button>
+        <!--  -->
+        <script src="https://cdn.jsdelivr.net/npm/sharer.js@latest/sharer.min.js"></script>
     </body>
 </html>

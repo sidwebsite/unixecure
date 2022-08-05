@@ -2,9 +2,9 @@
 <html lang="zh-Hant-TW">
     <head>
         <title>unixecure</title>
-    <meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="ree Web Tutorial"><meta name="keywords" content="HTML,CSS,JavaScript"><meta name="author" content="Mike"><link rel="icon" href="favicon.ico"><script defer src="./javascript/main.js?b2714e4f"></script><link href="css/style.css?b2714e4f" rel="stylesheet"></head>
+    <meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="ree Web Tutorial"><meta name="keywords" content="HTML,CSS,JavaScript"><meta name="author" content="Mike"><meta itemprop="name" content="unixecure"><meta itemprop="image" content=""><meta itemprop="description" content="ree Web Tutorial"><meta property="og:title" content="unixecure"><meta property="og:url" content=""><meta property="og:image" content=""><meta property="og:description" content="ree Web Tutorial"><link rel="icon" href="favicon.ico"><script defer src="./javascript/main.js?0f70d79a"></script><link href="css/style.css?0f70d79a" rel="stylesheet"></head>
     <body>
-        <main class="main main-page">
+        <main class="main copyright-privacy main-page">
             <!-- header starts -->
             <header class="header header-active">
                 <div class="header-content">
@@ -20,15 +20,21 @@
                         <button type="button" class="btn navbar-close-btn"><i class="fa-solid fa-xmark"></i></button>
                         <ul class="navbar-list">
                             <li><a href="about.html">關於我們</a></li>
-                            <li><a href="serve.html">服務項目</a></li>
+                            <li>
+                                <a href="javascript:;" data-toggle="sub-menu" class="dropdown">服務項目</a>
+                                <ul class="dropdown-menu list-unstyled">
+                                    <li><a href="serve-moc.html">MOC</a></li>
+                                </ul>
+                            </li>
                             <li><a href="news.html">最新消息</a></li>
                             <li><a href="video.html">影音專區</a></li>
+                            <li><a href="contact.html">聯絡我們</a></li>
                             <li>
-                                <a href="javascript:;" class="dropdown">
+                                <a href="javascript:;" data-toggle="sub-menu" class="dropdown">
                                     <i class="fa-solid fa-globe"></i>
                                     <span>繁體中文</span>
                                 </a>
-                                <ul class="dropdown-menu dropdown-hide list-unstyled">
+                                <ul class="dropdown-menu list-unstyled">
                                     <li>
                                         <input type="checkbox" name="language" id="zh-TW" checked>
                                         <label for="zh-TW">繁體中文</label>
@@ -48,7 +54,63 @@
             <!-- header ends -->
             <!-- content starts -->
             <section class="content">
-                
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="content-title border-0">
+                                <h1 class="text-darkcyan mb-3">著作權及隱私權聲明</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="content-article">
+                                <article class="article mt-3">
+                                    <h3 class="text-darkcyan mb-3">【著作權聲明】</h3>
+                                    <p>智慧資安科技股份有限公司（以下簡稱本公司）所屬網站（以下簡稱本網站）上刊載的所有內容，包括但不限於文字、圖片、影像、檔案、商標、標識、網站晝面安排、網頁設計等素材，均受中華民國著作權法及國際著作法律的保護，相關智慧財產權包括但不限於商標權、專利權、著作權、營業秘密與專有技術等。嚴禁任何未經事先同意的非法轉載和使用。若經查知，智慧資安科技股份有限公司將採取必要之法律行動。</p>
+                                    <h3 class="text-darkcyan mb-3">【隱私權聲明】</h3>
+                                    <h4>個人資料蒐集之目的</h4>
+                                    <p>依「個人資料保護法之特定目的及個人資料之類別」分類，本網站蒐集個人資料之目的包含：<br />○○二 人事管理、○一三 公共關係、○四○ 行銷、○六三 非公務機關依法定義務所進行個人資料之蒐集處理及利用、○七五 科技行政、○九八 商業與技術資訊、一○七 採購與供應管理、一○九 教育或訓練行政、一一○ 產學合作、一二三 貿易推廣及管理、一二五 傳播行政與管理、一三三 經營電信業務與電信加值網路業務、一三五 資（通）訊服務、一三六 資（通）訊與資料庫管理、一三七 資通安全與管理及一四八 網路購物及其他電子商務服務。</p>
+                                    <h4>個人資料蒐集之類別</h4>
+                                    <p>依「個人資料保護法之特定目的及個人資料之類別」分類，本網站蒐集個人資料之類別包含：<br />Ｃ○○一 辨識個人者、Ｃ○三五 休閒活動及興趣、Ｃ○三六 生活格調、Ｃ○五一 學校紀錄、 Ｃ○五二 資格或技術、Ｃ○五四 職業專長、Ｃ○六一 現行之受僱情形、Ｃ○六二 僱用經過、 Ｃ○六三 離職經過 及Ｃ○六四 工作經驗。 </p>
+                                    <h4>個人資料蒐集之方式</h4>
+                                    <p>本網站之伺服器可能會自動記錄您所閱讀的網頁、來自的IP位址及網域名稱，這些資訊僅用於進行數據性的統計分析，不涉及您的個人資料。僅於某些情況下，如您欲報名參加本公司舉辦之活動、加入本網站之會員、訂閱本公司之電子報或使用其他服務時，本公司將請您依據需求服務之不同提供個人資料。如姓名、聯絡方式、職業、任職公司之名稱等足以辨識個人之資料（以下簡稱精誠資訊客戶資料）。</p>
+                                    <p>您得自由選擇是否提供相關個人資料。若您不希望接受Cookie，可利用瀏覽器之設定停用，停用該功能將不影響您瀏覽與使用本網站之服務，惟若您拒絕提供個人資料，本公司將無法就您的需求進行必要之處理及提供您完整之服務。</p>
+                                    <h4>個人資料之利用與對象</h4>
+                                    <p>除非事先說明、法律另有規定，或本公司合理相信為保護本公司與關係企業之權利，或為遵守司法訴訟程序、法院命令或法定程序，否則精誠資訊客戶資料僅會於本公司及關係企業提供服務及行銷之範圍內使用，本公司不會提供給第三人、或移作其他目的使用。</p>
+                                    <h4>個人資料利用之期間</h4>
+                                    <p>個人資料利用之期間限於蒐集目的存續之期間，或至您要求停止使用或本公司停止提供服務之日為止。</p>
+                                    <h4>個人資料利用之地區</h4>
+                                    <p>為促進本公司之全球營運，本公司可能將精誠資訊客戶資料傳輸及存取至本公司營運之國家/地區，並根據本隱私權聲明於前述之用途運用。</p>
+                                    <h4>個人資料存取權</h4>
+                                    <p class="pb-0">本公司保有您的個人資料時，基於我國個人資料保護法之規定，您可以行使下述的權利：</p>
+                                    <ul class="pb-0">
+                                        <li>查詢或請求閱覽您的個人資料。</li>
+                                        <li>請求製給您的個人資料複製本。</li>
+                                        <li>請求補充或更正您的個人資料。</li>
+                                        <li>請求停止蒐集、處理或利用您的個人資料。</li>
+                                        <li>請求刪除您的個人資料。</li>
+                                    </ul>
+                                    <p>若您因提供本公司個人資料而需行使以上權利或有個人資料相關事項，請以電子信箱<a href="mailTo:webmaster@systex.com" class="link-cyan">webmaster@systex.com</a>聯繫，本公司將盡速與您說明。 </p>
+                                    <h4>第三方網站</h4>
+                                    <p>本網站可能包含其他網站或網頁（以下簡稱「第三方網站」）之連結，對於此等不屬於本網站之網站或網頁，將不涵蓋於本隱私權聲明中，相關之疑問請參考第三方網站之隱私權政策。</p>
+                                    <h4>個人資料保護安全措施</h4>
+                                    <p>本公司對於蒐集、處理或利用任何之個人資料皆以遵循本公司之個人資料管理目標與政策為指導原則，任何流程皆有嚴格之控管程序及標準作業流程，因此您可以安心的將您的個人資料提供予本公司。</p>
+                                    <h4>隱私權聲明內容的修改及公佈</h4>
+                                    <p>本公司保留修改本隱私權聲明內容之權利，爾後若有修改時，本公司會於官方網站上公佈新修改後之內容，供您閱覽。</p>
+                                </article>
+                                <div class="content-article-bottom">
+                                    <div class="share">
+                                        <span>分享此頁：</span>
+                                        <button type="button" class="btn" data-sharer="line" data-url=""><i class="fa-brands fa-line"></i></button>
+                                        <button type="button" class="btn" data-sharer="facebook" data-url=""><i class="fa-brands fa-facebook-f"></i></button>
+                                        <!-- <button type="button" class="btn"><i class="fa-solid fa-link"></i></button> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
             <!-- content ends -->
             <!-- footer starts -->
@@ -81,4 +143,6 @@
             <i class="fa-solid fa-caret-up"></i>
         </button>
     </body>
+    <!--  -->
+    <script src="https://cdn.jsdelivr.net/npm/sharer.js@latest/sharer.min.js"></script>
 </html>

@@ -1,0 +1,5 @@
+@each $var in $align {
+    .text-#{$var} {
+        text-align: $var !important;
+    }
+}

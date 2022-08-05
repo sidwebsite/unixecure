@@ -20,15 +20,21 @@
                         <button type="button" class="btn navbar-close-btn"><i class="fa-solid fa-xmark"></i></button>
                         <ul class="navbar-list">
                             <li><a href="about.html">關於我們</a></li>
-                            <li><a href="serve.html">服務項目</a></li>
-                            <li><a href="news.html">最新消息</a></li>
-                            <li><a href="video.html">影音專區</a></li>
                             <li>
-                                <a href="javascript:;" class="dropdown">
+                                <a href="javascript:;" data-toggle="sub-menu" class="dropdown">服務項目</a>
+                                <ul class="dropdown-menu list-unstyled">
+                                    <li><a href="serve-moc.html">MOC</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="news.html">最新消息</a></li>
+                            <li><a href="video.html">影音專區</a></li>                            
+                            <li><a href="contact.html">聯絡我們</a></li>
+                            <li>
+                                <a href="javascript:;" data-toggle="sub-menu" class="dropdown">
                                     <i class="fa-solid fa-globe"></i>
                                     <span>繁體中文</span>
                                 </a>
-                                <ul class="dropdown-menu dropdown-hide list-unstyled">
+                                <ul class="dropdown-menu list-unstyled">
                                     <li>
                                         <input type="checkbox" name="language" id="zh-TW" checked>
                                         <label for="zh-TW">繁體中文</label>
@@ -90,7 +96,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="text-primary mb-5">MOC 資安監控營運中心<br /> 一站式守護企業與機關資安防線</h2>
+                            <h2 class="text-primary mb-5 text-center">MOC 資安監控營運中心<br /> 一站式守護企業與機關資安防線</h2>
                         </div>
                     </div>
                     <div class="row">
@@ -309,7 +315,7 @@
                         </div>
                     </div>
                 </div>
-            </div>            
+            </div>
         </div>
         <!-- video modal ends -->
     </body>

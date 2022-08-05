@@ -154,7 +154,31 @@ __webpack_require__.r(__webpack_exports__);
 // ES 
 // dropdown javascript
 
-window.addEventListener('click', _module_navbar__WEBPACK_IMPORTED_MODULE_1__.dropdown);
+const navbarList = document.querySelector('.navbar-list');
+const mediaSize = 991;
+function collapseSubMenu() {
+    navbarList.querySelector('li.active .dropdown-menu').removeAttribute('style');
+    navbarList.querySelector('li.active').classList.remove('active');    
+}
+if(window.innerWidth <= mediaSize) {
+    navbarList.addEventListener('click', (e) => {
+        const menuItmeHasChildren = e.target.parentElement;
+        const dropdownMenu = menuItmeHasChildren.querySelector('.dropdown-menu');
+        if(menuItmeHasChildren.classList.contains('active')) {
+            collapseSubMenu();
+        } else {
+            if(e.target.hasAttribute('data-toggle')) {
+                if(navbarList.querySelector('li.active')) {
+                    collapseSubMenu();
+                };
+                menuItmeHasChildren.classList.add('active');
+                dropdownMenu.style.maxHeight = dropdownMenu.scrollHeight + 'px';
+                console.log(dropdownMenu.scrollHeight);
+            };
+        }   
+    });
+};
+
 // navbar javascript 
 const barBtn = document.querySelector('.bar-btn');
 barBtn.addEventListener('click', _module_navbar__WEBPACK_IMPORTED_MODULE_1__.navbarShow);
@@ -172,29 +196,8 @@ function scrollFunction(){
 };
 window.addEventListener('scroll', scrollFunction);
 backToTopButton.addEventListener('click', _javascript_module_gotop__WEBPACK_IMPORTED_MODULE_2__.smoothScrollBackToTop);
-// dashboard images slideshow
-let slideIndex = 0;
-const dots = document.querySelectorAll('.dot');
-const slides = document.querySelectorAll('.slide');
-function showSlides() {	
-	slides.forEach((slide, i) => {
-		slide.style.display = "none";
-	})
-	slideIndex++;
-	if (slideIndex > slides.length) {slideIndex = 1}   
-	dots.forEach((dot, i) => {
-		dot.className = dot.className.replace(" active", "");
-	})
-	slides[slideIndex-1].style.display = "block";  
-	dots[slideIndex-1].className += " active";
-	setTimeout(showSlides, 5000); 
-};
-showSlides();
-
-
-
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=main.js.map?b2714e4f
+//# sourceMappingURL=main.js.map?0f70d79a
