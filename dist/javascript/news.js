@@ -110,45 +110,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "decrease": () => (/* binding */ decrease),
 /* harmony export */   "increase": () => (/* binding */ increase)
 /* harmony export */ });
+/* harmony import */ var _pagination__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pagination */ "./src/javascript/module/pagination.js");
+
 const newsList = document.querySelector('.news-list');
+const sortBtn = document.querySelector('.sort-btn');
+const sortText = document.querySelector('.sort-text');
 let i ,shouldSwitch , switching;
 // 最新
-function increase() {
-    switching = true;
-    while (switching) {
-        switching = false;
-        const list = newsList.querySelectorAll('.list');
-        for (i = 0; i < (list.length - 1); i++) {
-            shouldSwitch = false;
-            if (Number(list[i].dataset.date.replace(/[\ |\/|\:|\,|\?]/g,"")) < Number(list[i + 1].dataset.date.replace(/[\ |\/|\:|\,|\?]/g,""))) {
-                shouldSwitch = true;
-                break;
-            };
-        };
-        if (shouldSwitch) {
-            list[i].parentNode.insertBefore(list[i + 1], list[i]);
-            switching = true;
-        };
-    };
-};
+function increase(listData, sortData) {
+    sortText.textContent = '最新';
+    newsList.classList.remove('increase');
+    newsList.classList.add('decrease');
+    sortBtn.querySelector('.fa-solid').classList.add('fa-arrow-up-wide-short');        
+    sortBtn.querySelector('.fa-solid').classList.remove('fa-arrow-down-wide-short');
+
+    listData.sort((a, b) => {
+        if(a.date < b.date) return 1;
+        if(a.date > b.date) return -1;
+        return 0;
+    });
+    sortData = listData;
+    (0,_pagination__WEBPACK_IMPORTED_MODULE_0__.pagination)(sortData, 1);
+}
 // 最舊
-function decrease() {
-    switching = true;
-    while (switching) {
-        switching = false;
-        const list = newsList.querySelectorAll('.list');
-        for (i = 0; i < (list.length - 1); i++) {
-            shouldSwitch = false;
-            if (Number(list[i].dataset.date.replace(/[\ |\/|\:|\,|\?]/g,"")) > Number(list[i + 1].dataset.date.replace(/[\ |\/|\:|\,|\?]/g,""))) {
-                shouldSwitch = true;
-                break;
-            };
-        };
-        if (shouldSwitch) {
-            list[i].parentNode.insertBefore(list[i + 1], list[i]);
-            switching = true;
-        };
-    };
+function decrease(listData, sortData) {
+    sortText.textContent = '最舊';
+        newsList.classList.add('increase');
+        newsList.classList.remove('decrease');
+        sortBtn.querySelector('.fa-solid').classList.remove('fa-arrow-up-wide-short');        
+        sortBtn.querySelector('.fa-solid').classList.add('fa-arrow-down-wide-short');
+        // decrease();
+        listData.sort((a, b) => {
+            if(a.date < b.date) return -1;
+            if(a.date > b.date) return 1;
+            return 0;
+        });
+        sortData = listData;
+        (0,_pagination__WEBPACK_IMPORTED_MODULE_0__.pagination)(sortData, 1);
 };
 
 /***/ }),
@@ -254,7 +252,7 @@ const newsListData = [
         image: '../images/index-news-02.jpg',
         link: 'news-content-02.html',
         date: '2022/03/18'
-    },    
+    },
 ];
 // pagination
 
@@ -270,28 +268,18 @@ function switchPage(e){
 };
 paginationClass.addEventListener('click', switchPage);
 // sort
+let sortList = [];
 
 const sortBtn = document.querySelector('.sort-btn');
-const sortText = document.querySelector('.sort-text');
 sortBtn.addEventListener('click', () => {
-    if(newsList.classList.contains('increase')) {
-        sortText.textContent = '最新';
-        newsList.classList.remove('increase');
-        newsList.classList.add('decrease');
-        sortBtn.querySelector('.fa-solid').classList.add('fa-arrow-up-wide-short');        
-        sortBtn.querySelector('.fa-solid').classList.remove('fa-arrow-down-wide-short');
-        (0,_module_sort__WEBPACK_IMPORTED_MODULE_1__.increase)();
+    if(newsList.classList.contains('increase')) {        
+        (0,_module_sort__WEBPACK_IMPORTED_MODULE_1__.increase)(newsListData, sortList);
     } else {
-        sortText.textContent = '最舊';
-        newsList.classList.add('increase');
-        newsList.classList.remove('decrease');
-        sortBtn.querySelector('.fa-solid').classList.remove('fa-arrow-up-wide-short');        
-        sortBtn.querySelector('.fa-solid').classList.add('fa-arrow-down-wide-short');
-        (0,_module_sort__WEBPACK_IMPORTED_MODULE_1__.decrease)();
+        (0,_module_sort__WEBPACK_IMPORTED_MODULE_1__.decrease)(newsListData, sortList);
     };
 });
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=news.js.map?0f70d79a
+//# sourceMappingURL=news.js.map?09729889

@@ -11,7 +11,7 @@ const newsListData = [
         image: '../images/index-news-02.jpg',
         link: 'news-content-02.html',
         date: '2022/03/18'
-    },    
+    },
 ];
 // pagination
 import { pagination } from './module/pagination';
@@ -27,23 +27,13 @@ function switchPage(e){
 };
 paginationClass.addEventListener('click', switchPage);
 // sort
+let sortList = [];
 import { increase, decrease } from './module/sort';
 const sortBtn = document.querySelector('.sort-btn');
-const sortText = document.querySelector('.sort-text');
 sortBtn.addEventListener('click', () => {
-    if(newsList.classList.contains('increase')) {
-        sortText.textContent = '最新';
-        newsList.classList.remove('increase');
-        newsList.classList.add('decrease');
-        sortBtn.querySelector('.fa-solid').classList.add('fa-arrow-up-wide-short');        
-        sortBtn.querySelector('.fa-solid').classList.remove('fa-arrow-down-wide-short');
-        increase();
+    if(newsList.classList.contains('increase')) {        
+        increase(newsListData, sortList);
     } else {
-        sortText.textContent = '最舊';
-        newsList.classList.add('increase');
-        newsList.classList.remove('decrease');
-        sortBtn.querySelector('.fa-solid').classList.remove('fa-arrow-up-wide-short');        
-        sortBtn.querySelector('.fa-solid').classList.add('fa-arrow-down-wide-short');
-        decrease();
+        decrease(newsListData, sortList);
     };
 });
