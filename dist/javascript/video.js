@@ -115,9 +115,8 @@ __webpack_require__.r(__webpack_exports__);
 const newsList = document.querySelector('.news-list');
 const sortBtn = document.querySelector('.sort-btn');
 const sortText = document.querySelector('.sort-text');
-let i ,shouldSwitch , switching;
 // 最新
-function increase(listData, sortData) {
+function increase(listData, sortData, currentPage) {
     sortText.textContent = '最新';
     newsList.classList.remove('increase');
     newsList.classList.add('decrease');
@@ -130,10 +129,10 @@ function increase(listData, sortData) {
         return 0;
     });
     sortData = listData;
-    (0,_pagination__WEBPACK_IMPORTED_MODULE_0__.pagination)(sortData, 1);
+    (0,_pagination__WEBPACK_IMPORTED_MODULE_0__.pagination)(sortData, currentPage);
 }
 // 最舊
-function decrease(listData, sortData) {
+function decrease(listData, sortData, currentPage) {
     sortText.textContent = '最舊';
         newsList.classList.add('increase');
         newsList.classList.remove('decrease');
@@ -146,7 +145,7 @@ function decrease(listData, sortData) {
             return 0;
         });
         sortData = listData;
-        (0,_pagination__WEBPACK_IMPORTED_MODULE_0__.pagination)(sortData, 1);
+        (0,_pagination__WEBPACK_IMPORTED_MODULE_0__.pagination)(sortData, currentPage);
 };
 
 /***/ }),
@@ -275,16 +274,22 @@ paginationClass.addEventListener('click', switchPage);
 let sortList = [];
 
 const sortBtn = document.querySelector('.sort-btn');
+let currentPage = 1;
 sortBtn.addEventListener('click', () => {
-    if(newsList.classList.contains('increase')) {        
-        (0,_module_sort__WEBPACK_IMPORTED_MODULE_2__.increase)(videoListData, sortList);
+    const page = paginationClass.querySelectorAll('li');
+    page.forEach((item) => {
+        if(item.classList.contains('active')) {
+            currentPage = item.querySelector('a').dataset.page;
+        }
+    })
+    if(newsList.classList.contains('increase')) {
+        (0,_module_sort__WEBPACK_IMPORTED_MODULE_2__.increase)(videoListData, sortList, currentPage);
     } else {
-        (0,_module_sort__WEBPACK_IMPORTED_MODULE_2__.decrease)(videoListData, sortList);
+        (0,_module_sort__WEBPACK_IMPORTED_MODULE_2__.decrease)(videoListData, sortList, currentPage);
     };
 });
-
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=video.js.map?09729889
+//# sourceMappingURL=video.js.map?155a7060

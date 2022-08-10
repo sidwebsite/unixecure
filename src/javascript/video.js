@@ -33,10 +33,17 @@ paginationClass.addEventListener('click', switchPage);
 let sortList = [];
 import { increase, decrease } from './module/sort';
 const sortBtn = document.querySelector('.sort-btn');
+let currentPage = 1;
 sortBtn.addEventListener('click', () => {
-    if(newsList.classList.contains('increase')) {        
-        increase(videoListData, sortList);
+    const page = paginationClass.querySelectorAll('li');
+    page.forEach((item) => {
+        if(item.classList.contains('active')) {
+            currentPage = item.querySelector('a').dataset.page;
+        }
+    })
+    if(newsList.classList.contains('increase')) {
+        increase(videoListData, sortList, currentPage);
     } else {
-        decrease(videoListData, sortList);
+        decrease(videoListData, sortList, currentPage);
     };
 });

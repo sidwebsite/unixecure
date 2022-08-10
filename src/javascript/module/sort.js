@@ -2,9 +2,8 @@ import { pagination } from './pagination';
 const newsList = document.querySelector('.news-list');
 const sortBtn = document.querySelector('.sort-btn');
 const sortText = document.querySelector('.sort-text');
-let i ,shouldSwitch , switching;
 // 最新
-export function increase(listData, sortData) {
+export function increase(listData, sortData, currentPage) {
     sortText.textContent = '最新';
     newsList.classList.remove('increase');
     newsList.classList.add('decrease');
@@ -17,10 +16,10 @@ export function increase(listData, sortData) {
         return 0;
     });
     sortData = listData;
-    pagination(sortData, 1);
+    pagination(sortData, currentPage);
 }
 // 最舊
-export function decrease(listData, sortData) {
+export function decrease(listData, sortData, currentPage) {
     sortText.textContent = '最舊';
         newsList.classList.add('increase');
         newsList.classList.remove('decrease');
@@ -33,5 +32,5 @@ export function decrease(listData, sortData) {
             return 0;
         });
         sortData = listData;
-        pagination(sortData, 1);
+        pagination(sortData, currentPage);
 };

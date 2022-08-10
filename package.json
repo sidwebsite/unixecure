@@ -4,7 +4,8 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "bulid": "webpack",
+    "bulid": "webpack --mode development",
+    "deploy": "webpack --mode production",
     "serve": "webpack serve"
   },
   "repository": {

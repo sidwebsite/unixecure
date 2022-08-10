@@ -115,9 +115,8 @@ __webpack_require__.r(__webpack_exports__);
 const newsList = document.querySelector('.news-list');
 const sortBtn = document.querySelector('.sort-btn');
 const sortText = document.querySelector('.sort-text');
-let i ,shouldSwitch , switching;
 // 最新
-function increase(listData, sortData) {
+function increase(listData, sortData, currentPage) {
     sortText.textContent = '最新';
     newsList.classList.remove('increase');
     newsList.classList.add('decrease');
@@ -130,10 +129,10 @@ function increase(listData, sortData) {
         return 0;
     });
     sortData = listData;
-    (0,_pagination__WEBPACK_IMPORTED_MODULE_0__.pagination)(sortData, 1);
+    (0,_pagination__WEBPACK_IMPORTED_MODULE_0__.pagination)(sortData, currentPage);
 }
 // 最舊
-function decrease(listData, sortData) {
+function decrease(listData, sortData, currentPage) {
     sortText.textContent = '最舊';
         newsList.classList.add('increase');
         newsList.classList.remove('decrease');
@@ -146,7 +145,7 @@ function decrease(listData, sortData) {
             return 0;
         });
         sortData = listData;
-        (0,_pagination__WEBPACK_IMPORTED_MODULE_0__.pagination)(sortData, 1);
+        (0,_pagination__WEBPACK_IMPORTED_MODULE_0__.pagination)(sortData, currentPage);
 };
 
 /***/ }),
@@ -253,6 +252,90 @@ const newsListData = [
         link: 'news-content-02.html',
         date: '2022/03/18'
     },
+    {
+        title: '智慧資安科技已通過技服中心聯防監控廠商的連通測試，包含G-SOC 1.0、G-SOC2.0、EDR 連線測試作業！',
+        image: '../images/index-news-01.jpg',
+        link: 'news-content-01.html',
+        date: '2022/06/15'
+    },
+    {
+        title: 'MOC資安監控維運中心已被國際認證具有軟體、數據及演算技術能力，已取得ISO20000、ISO27001與ISO27701 的國際認證',
+        image: '../images/index-news-02.jpg',
+        link: 'news-content-02.html',
+        date: '2022/03/18'
+    },
+    {
+        title: '智慧資安科技已通過技服中心聯防監控廠商的連通測試，包含G-SOC 1.0、G-SOC2.0、EDR 連線測試作業！',
+        image: '../images/index-news-01.jpg',
+        link: 'news-content-01.html',
+        date: '2022/06/15'
+    },
+    {
+        title: 'MOC資安監控維運中心已被國際認證具有軟體、數據及演算技術能力，已取得ISO20000、ISO27001與ISO27701 的國際認證',
+        image: '../images/index-news-02.jpg',
+        link: 'news-content-02.html',
+        date: '2022/03/18'
+    },
+    {
+        title: '智慧資安科技已通過技服中心聯防監控廠商的連通測試，包含G-SOC 1.0、G-SOC2.0、EDR 連線測試作業！',
+        image: '../images/index-news-01.jpg',
+        link: 'news-content-01.html',
+        date: '2022/06/15'
+    },
+    {
+        title: 'MOC資安監控維運中心已被國際認證具有軟體、數據及演算技術能力，已取得ISO20000、ISO27001與ISO27701 的國際認證',
+        image: '../images/index-news-02.jpg',
+        link: 'news-content-02.html',
+        date: '2022/03/18'
+    },
+    {
+        title: '智慧資安科技已通過技服中心聯防監控廠商的連通測試，包含G-SOC 1.0、G-SOC2.0、EDR 連線測試作業！',
+        image: '../images/index-news-01.jpg',
+        link: 'news-content-01.html',
+        date: '2022/06/15'
+    },
+    {
+        title: 'MOC資安監控維運中心已被國際認證具有軟體、數據及演算技術能力，已取得ISO20000、ISO27001與ISO27701 的國際認證',
+        image: '../images/index-news-02.jpg',
+        link: 'news-content-02.html',
+        date: '2022/03/18'
+    },
+    {
+        title: '智慧資安科技已通過技服中心聯防監控廠商的連通測試，包含G-SOC 1.0、G-SOC2.0、EDR 連線測試作業！',
+        image: '../images/index-news-01.jpg',
+        link: 'news-content-01.html',
+        date: '2022/06/15'
+    },
+    {
+        title: 'MOC資安監控維運中心已被國際認證具有軟體、數據及演算技術能力，已取得ISO20000、ISO27001與ISO27701 的國際認證',
+        image: '../images/index-news-02.jpg',
+        link: 'news-content-02.html',
+        date: '2022/03/18'
+    },
+    {
+        title: '智慧資安科技已通過技服中心聯防監控廠商的連通測試，包含G-SOC 1.0、G-SOC2.0、EDR 連線測試作業！',
+        image: '../images/index-news-01.jpg',
+        link: 'news-content-01.html',
+        date: '2022/06/15'
+    },
+    {
+        title: 'MOC資安監控維運中心已被國際認證具有軟體、數據及演算技術能力，已取得ISO20000、ISO27001與ISO27701 的國際認證',
+        image: '../images/index-news-02.jpg',
+        link: 'news-content-02.html',
+        date: '2022/03/18'
+    },
+    {
+        title: '智慧資安科技已通過技服中心聯防監控廠商的連通測試，包含G-SOC 1.0、G-SOC2.0、EDR 連線測試作業！',
+        image: '../images/index-news-01.jpg',
+        link: 'news-content-01.html',
+        date: '2022/06/15'
+    },
+    {
+        title: 'MOC資安監控維運中心已被國際認證具有軟體、數據及演算技術能力，已取得ISO20000、ISO27001與ISO27701 的國際認證',
+        image: '../images/index-news-02.jpg',
+        link: 'news-content-02.html',
+        date: '2022/03/18'
+    },
 ];
 // pagination
 
@@ -271,15 +354,22 @@ paginationClass.addEventListener('click', switchPage);
 let sortList = [];
 
 const sortBtn = document.querySelector('.sort-btn');
+let currentPage = 1;
 sortBtn.addEventListener('click', () => {
-    if(newsList.classList.contains('increase')) {        
-        (0,_module_sort__WEBPACK_IMPORTED_MODULE_1__.increase)(newsListData, sortList);
+    const page = paginationClass.querySelectorAll('li');
+    page.forEach((item) => {
+        if(item.classList.contains('active')) {
+            currentPage = item.querySelector('a').dataset.page;
+        }
+    })
+    if(newsList.classList.contains('increase')) {
+        (0,_module_sort__WEBPACK_IMPORTED_MODULE_1__.increase)(newsListData, sortList, currentPage);
     } else {
-        (0,_module_sort__WEBPACK_IMPORTED_MODULE_1__.decrease)(newsListData, sortList);
+        (0,_module_sort__WEBPACK_IMPORTED_MODULE_1__.decrease)(newsListData, sortList, currentPage);
     };
 });
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=news.js.map?09729889
+//# sourceMappingURL=news.js.map?155a7060

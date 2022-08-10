@@ -197,6 +197,5 @@ module.exports = {
         port: '5000',
         open: true
     },
-    mode: 'development',
     devtool: 'source-map'
 };
