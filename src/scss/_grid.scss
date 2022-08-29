@@ -21,7 +21,7 @@
 // 
 @each $key, $value in $grid-breakpoints {
     @if not $value {
-        @for $var from 1 to $grid-columns {
+        @for $var from 1 through $grid-columns {
             .col-#{$var} {
                 max-width: calc(map-get($values, 100) * ($var / $grid-columns));
                 flex: 0 0 calc(map-get($values, 100) * ($var / $grid-columns));
@@ -29,7 +29,7 @@
         }
     } @else {
         @media screen and (min-width: $value) {
-            @for $var from 1 to $grid-columns {
+            @for $var from 1 through $grid-columns {
                 .col-#{$key}-#{$var} {
                     max-width: calc(map-get($values, 100) * ($var / $grid-columns));
                     flex: 0 0 calc(map-get($values, 100) * ($var / $grid-columns));
@@ -56,14 +56,14 @@
 }
 @each $key, $value in $grid-breakpoints {
     @if not $value {
-        @for $var from 1 to $grid-columns + 1 {
+        @for $var from 1 through $grid-columns {
             .g-#{$var} {
                 grid-column: auto/span $var;
             }
         }
     } @else {
         @media screen and (min-width: $value) {
-            @for $var from 1 to $grid-columns + 1 {
+            @for $var from 1 through $grid-columns {
                 .g-#{$key}-#{$var} {
                     grid-column: auto/span $var;
                 }

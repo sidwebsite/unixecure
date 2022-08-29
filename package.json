@@ -6,7 +6,7 @@
   "scripts": {
     "bulid": "webpack --mode development",
     "deploy": "webpack --mode production",
-    "serve": "webpack serve"
+    "serve": "webpack serve --mode development"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.7",
     "css-loader": "^6.7.1",
+    "css-minimizer-webpack-plugin": "^4.0.0",
     "html-loader": "^4.1.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
@@ -35,6 +36,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.1.1",
     "animate.css": "^3.7.2",
+    "sharer.js": "^0.5.1",
     "wow.js": "^1.2.2"
   }
 }

@@ -1,9 +1,11 @@
-@mixin  background-image($image, $size: cover) {
-    background-image: url(../images/#{$image});
-    background-repeat: no-repeat;
-    background-size: $size;
+@mixin background-image($image, $size: cover) {
+    background: {
+        image: url(../images/#{$image});
+        repeat: no-repeat;
+        size: $size;
+    }
 };
-@mixin  background-page($image) {
+@mixin background-page($image) {
     @include background-image($image, auto);
     position: relative;
     &::before {

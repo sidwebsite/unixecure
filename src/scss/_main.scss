@@ -36,10 +36,12 @@
 }
 // header
 .header {
-    padding-top: $size-base;
-    padding-bottom: $size-base;
-    padding-left: $size-base * 1.5;
-    padding-right: $size-base * 1.5;
+    padding: {
+        top: $size-base;
+        bottom: $size-base;
+        left: $size-base * 1.5;
+        right: $size-base * 1.5;
+    };
     position: fixed;
     width: map-get($values, 100);
     top: map-get($values, 0);
@@ -201,9 +203,11 @@
     flex-flow: column;
     // padding-top: $size-base * 8;
     .banner-text {
-        padding-left: $size-base * 1.5;
-        padding-right: $size-base * 1.5;
-        padding-top: $size-base * 8;
+        padding: {
+            left: $size-base * 1.5;
+            right: $size-base * 1.5;
+            top: $size-base * 8;
+        };        
         h3 {
             line-height: 1.8;
             margin-bottom: $size-base * 3;
@@ -237,11 +241,15 @@
     border-radius: $size-base * 3;
     box-shadow: 3px 3px 18px rgba($primary, 0.3);
     text-align: center;
-    margin-bottom: $size-base * 3;
-    padding-top: $size-base * 1.5;
-    padding-bottom: $size-base * 1.5;
-    margin-left: $size-base * 1.5;
-    margin-right: $size-base * 1.5;
+    padding: {
+        top: $size-base * 1.5;
+        bottom: $size-base * 1.5;
+    };
+    margin: {
+        bottom: $size-base * 3;    
+        left: $size-base * 1.5;
+        right: $size-base * 1.5;
+    };    
     color: var(--darkcyan);
     .number {
         font-size: $size-base * 3.2;
@@ -620,17 +628,17 @@
     .moc {
         .moc-content {
             .moc-row{
-                background-image: url(../images/moc-grid.png);
-                background-repeat: no-repeat;
+                @include background-image('../images/moc-grid.png',contain);
                 background-position: bottom;
-                background-size: contain;
                 flex: 1 0 0%;
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 gap: $size-base * 1.5;
-                padding-bottom: $size-base * 2;
-                padding-right: $size-base * 8;
-                padding-left: $size-base * 5.5;
+                padding: {
+                    bottom: $size-base * 2;
+                    right: $size-base * 8;
+                    left: $size-base * 5.5;
+                };                
                 img {
                     width: 100%;
                 }

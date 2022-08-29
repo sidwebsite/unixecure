@@ -1,6 +1,10 @@
 @mixin container {
-    margin-left: map-get($values, auto);
-    margin-right: map-get($values, auto);
-    padding-left: $grid-gutter-width;
-	padding-right: $grid-gutter-width;
+    margin: {
+        left: map-get($values, auto);
+        right: map-get($values, auto);
+    };
+    padding: {
+        left: $grid-gutter-width;
+        right: $grid-gutter-width;
+    };    
 }

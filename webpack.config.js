@@ -2,6 +2,7 @@ const path = require('path');
 // MiniCssExtractPlugin
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 // 
 const meta = {
     title:'unixecure',
@@ -105,7 +106,7 @@ module.exports = {
             template: './src/html/about.html',
             filename: 'about.html',
             meta: metaDate,
-            chunks: ['main'],
+            chunks: ['main', 'share'],
             favicon: favicon,
             minify: false
         }),
@@ -114,7 +115,7 @@ module.exports = {
             template: './src/html/contact.html',
             filename: 'contact.html',
             meta: metaDate,
-            chunks: ['main'],
+            chunks: ['main', 'share'],
             favicon: favicon,
             minify: false
         }),
@@ -123,7 +124,23 @@ module.exports = {
             template: './src/html/serve-moc.html',
             filename: 'serve-moc.html',
             meta: metaDate,
-            chunks: ['main'],
+            chunks: ['main', 'share'],
+            favicon: favicon,
+            minify: false
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/html/serve-heis.html',
+            filename: 'serve-heis.html',
+            meta: metaDate,
+            chunks: ['main', 'share'],
+            favicon: favicon,
+            minify: false
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/html/serve-srmas.html',
+            filename: 'serve-srmas.html',
+            meta: metaDate,
+            chunks: ['main', 'share'],
             favicon: favicon,
             minify: false
         }),
@@ -141,7 +158,7 @@ module.exports = {
             template: './src/html/news-content-01.html',
             filename: 'news-content-01.html',
             meta: metaDate,
-            chunks: ['main'],
+            chunks: ['main', 'share'],
             favicon: favicon,
             minify: false
         }),
@@ -149,7 +166,7 @@ module.exports = {
             template: './src/html/news-content-02.html',
             filename: 'news-content-02.html',
             meta: metaDate,
-            chunks: ['main'],
+            chunks: ['main', 'share'],
             favicon: favicon,
             minify: false
         }),
@@ -166,7 +183,7 @@ module.exports = {
             template: './src/html/video-content-01.html',
             filename: 'video-content-01.html',
             meta: metaDate,
-            chunks: ['main'],
+            chunks: ['main', 'share'],
             favicon: favicon,
             minify: false
         }),
@@ -174,7 +191,7 @@ module.exports = {
             template: './src/html/video-content-02.html',
             filename: 'video-content-02.html',
             meta: metaDate,
-            chunks: ['main'],
+            chunks: ['main', 'share'],
             favicon: favicon,
             minify: false 
         }),
@@ -183,11 +200,16 @@ module.exports = {
             template: './src/html/copyright-privacy.html',
             filename: 'copyright-privacy.html',
             meta: metaDate,
-            chunks: ['main'],
+            chunks: ['main', 'share'],
             favicon: favicon,
             minify: false
         }),
     ],
+    optimization: {
+        minimizer: [
+            new CssMinimizerPlugin(),
+        ],
+    },
     devServer: {
         static: {
             directory: path.join(__dirname, 'dist'),

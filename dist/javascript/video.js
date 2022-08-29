@@ -292,4 +292,4 @@ sortBtn.addEventListener('click', () => {
 
 /******/ })()
 ;
-//# sourceMappingURL=video.js.map?155a7060
+//# sourceMappingURL=video.js.map?7b88ebce

@@ -1,5 +1,5 @@
 // scss
-import '../scss/style.scss'
+import '../scss/style.scss';
 // ES 
 // dropdown javascript
 import { dropdown, navbarShow , navbarHide} from './module/navbar';
