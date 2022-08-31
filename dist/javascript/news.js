@@ -241,7 +241,7 @@ __webpack_require__.r(__webpack_exports__);
 // list data
 const newsListData = [
     {
-        title: '智慧資安科技已通過技服中心聯防監控廠商的連通測試，包含G-SOC 1.0、G-SOC2.0、EDR 連線測試作業！',
+        title: '智慧資安科技已通過技服中心聯防監控廠商的連通測試，包含G-SOC 1.0、G-SOC 2.0、EDR 連線測試作業！',
         image: './images/index-news-01.jpg',
         link: 'news-content-01.html',
         date: '2022/06/15'
@@ -288,4 +288,4 @@ sortBtn.addEventListener('click', () => {
 
 /******/ })()
 ;
-//# sourceMappingURL=news.js.map?7b88ebce
+//# sourceMappingURL=news.js.map?fe083059
